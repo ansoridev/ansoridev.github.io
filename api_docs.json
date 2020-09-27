@@ -8,7 +8,7 @@
       "email": "contact@gunapedia.com"
     }
   },
-  "host": "https://api.gunapedia.com",
+  "host": "api.gunapedia.com",
   "basePath": "/",
   "tags": [
     {
