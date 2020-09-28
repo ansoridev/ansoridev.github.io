@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "Berikut merupakan dokumentasi layanan akses API [GunaPedia.com](https://gunapedia.com)\nHubungi di Whatsapp: [+62 852 6676 1420](https://wa.me/6285266761420)\n",
-    "version": "2.2.0",
+    "version": "1.2.0",
     "title": "GunaPedia API",
     "contact": {
       "email": "contact@gunapedia.com"
@@ -373,6 +373,241 @@
           }
         ]
       }
+    },
+    "/hosting/plesk/retrivepkg": {
+      "post": {
+        "tags": [
+          "Hosting"
+        ],
+        "summary": "Mengambil list paket hosting yang tersedia",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Unknown Error, Please contact support"
+          }
+        },
+        "security": [
+          {
+            "key": []
+          }
+        ]
+      }
+    },
+    "/hosting/plesk/retriveprc": {
+      "post": {
+        "tags": [
+          "Hosting"
+        ],
+        "summary": "Mengambil harga paket berdasarkan nama paket",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "plan",
+            "in": "formData",
+            "description": "Nama Paket | Contoh = Extra",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Unknown Error, Please contact support"
+          }
+        },
+        "security": [
+          {
+            "key": []
+          }
+        ]
+      }
+    },
+    "/hosting/plesk/purchase": {
+      "post": {
+        "tags": [
+          "Hosting"
+        ],
+        "summary": "Melakukan pembelian layanan web hosting",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "domain",
+            "in": "formData",
+            "description": "Nama Domain | Contoh = gunapedia.com",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "plan",
+            "in": "formData",
+            "description": "Nama Paket | Contoh = Extra",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "month",
+            "in": "formData",
+            "description": "Bulan",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "isAvailable",
+            "in": "formData",
+            "description": "Bernilai 1 atau 0",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Unknown Error, Please contact support"
+          }
+        },
+        "security": [
+          {
+            "key": []
+          }
+        ]
+      }
+    },
+    "/hosting/plesk/listhosting": {
+      "post": {
+        "tags": [
+          "Hosting"
+        ],
+        "summary": "Mengambil list hosting di akun",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Unknown Error, Please contact support"
+          }
+        },
+        "security": [
+          {
+            "key": []
+          }
+        ]
+      }
+    },
+    "/hosting/plesk/detail": {
+      "post": {
+        "tags": [
+          "Hosting"
+        ],
+        "summary": "Mendapatkan detail dari layanan hosting berdasarkan id",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "ID Layanan hosting anda",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Unknown Error, Please contact support"
+          }
+        },
+        "security": [
+          {
+            "key": []
+          }
+        ]
+      }
+    },
+    "/hosting/reset/password": {
+      "put": {
+        "tags": [
+          "Hosting"
+        ],
+        "summary": "Mereset password layanan hosting berdasarkan id",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Berdasarkan ID Layanan hosting anda",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/byid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Unknown Error, Please contact support"
+          }
+        },
+        "security": [
+          {
+            "key": []
+          }
+        ]
+      }
     }
   },
   "securityDefinitions": {
@@ -388,6 +623,14 @@
       "properties": {
         "domain": {
           "type": "string"
+        }
+      }
+    },
+    "byid": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
         }
       }
     },
