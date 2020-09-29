@@ -608,6 +608,34 @@
           }
         ]
       }
+    },
+    "/pengguna/query/info": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Mengambil detail informasi akun GunaPedia",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Unknown Error, Please contact support"
+          }
+        },
+        "security": [
+          {
+            "key": []
+          }
+        ]
+      }
     }
   },
   "securityDefinitions": {
