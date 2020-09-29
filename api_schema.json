@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Berikut merupakan dokumentasi layanan akses API [GunaPedia.com](https://gunapedia.com)\nHubungi di Whatsapp: [+62 852 6676 1420](https://wa.me/6285266761420)\n",
+    "description": "Berikut merupakan dokumentasi layanan akses API [GunaPedia.com](https://gunapedia.com)\nHubungi di Whatsapp: [+62 852 6676 1420](https://wa.me/6285266761420)\n Untuk Module WHMCS dapat didapatkan di [Module WHMCS GunaPedia](https://github.com/ansoridev/module-whmcs-gunapedia)",
     "version": "1.2.0",
     "title": "GunaPedia API",
     "contact": {
