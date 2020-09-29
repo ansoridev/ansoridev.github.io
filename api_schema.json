@@ -646,7 +646,17 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/blank"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -689,6 +699,10 @@
           "type": "integer"
         }
       }
+    },
+    "blank": {
+      "type": "object",
+      "properties": {}
     },
     "nameserver": {
       "type": "object",
