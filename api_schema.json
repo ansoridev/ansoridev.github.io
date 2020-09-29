@@ -636,9 +636,8 @@
           }
         ]
       }
-    }
-  },
-  "/pengguna/query/info": {
+    },
+    "/pengguna/update/key": {
       "put": {
         "tags": [
           "Users"
